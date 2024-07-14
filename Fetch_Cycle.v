@@ -1,3 +1,8 @@
+`include "mux2to1.v"
+`include "PC.v"
+`include "Instruction_Memory.v"
+`include "PC_Adder.v"
+
 
 module fetch_cycle(clk, rst, PCSrcE, PCTargetE, InstrD, PCD, PCPlus4D);
 
