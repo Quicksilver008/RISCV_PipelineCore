@@ -2,8 +2,7 @@
 # RISCV_PipelineCore
 
 ## Project Overview
-RISCV_PipelineCore is an independent project focused on designing and implementing a basic pipeline processor based on the RISC-V instruction set architecture (ISA). The project includes support for fundamental arithmetic and logical operations, as well as load and store instructions.
-
+RISCV_PipelineCore is an independent project focused on designing and implementing a basic pipeline processor based on the RISC-V instruction set architecture (ISA). The project includes support for fundamental arithmetic and logical operations, as well as load and store instructions.Utilized forwarding and bypassing techniques to efficiently resolve data hazards
 ## Collaborators
 - Mohammad Omar Sulemani
 - Md Atib Kaif
