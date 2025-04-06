@@ -1,3 +1,4 @@
+`include "Pipeline_Top.v"
 module tb();
 
     reg clk=0, rst;

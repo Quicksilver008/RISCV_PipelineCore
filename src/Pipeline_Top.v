@@ -1,5 +1,5 @@
 `include "Fetch_Cycle.v"
-`include "Decode_Cyle.v"
+`include "Decode_cycle.v"
 `include "Execute_Cycle.v"
 `include "Memory_Cycle.v"
 `include "Writeback_Cycle.v"    

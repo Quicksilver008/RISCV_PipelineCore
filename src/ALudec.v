@@ -15,4 +15,4 @@ module ALUdecoder(ALUOp,funct3,op,funct7,ALUControl);
                       (ALUOp==2'b10&funct3==3'b000&concatination==2'b11)?3'b001:
                       (ALUOp==2'b10&funct3==3'b000&concatination!=2'b11)?3'b000:000;
                       
-endmodule;
+endmodule

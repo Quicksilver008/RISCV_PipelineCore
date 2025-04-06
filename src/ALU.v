@@ -22,6 +22,6 @@ module ALU(A,B,Result,ALUControl,OverFlow,Carry,Zero,Negative);
                       (~ALUControl[1]));
     assign Carry = ((~ALUControl[1]) & Cout);
     assign Zero = &(~Result);
-    assign Negative = Result[31];
-
+    assign Negative = Result[31];  
+    
 endmodule
