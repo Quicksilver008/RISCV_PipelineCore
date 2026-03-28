@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+src/dump.vcd
+src/*.vvp
+src/alu_shift_tb.v
+src/aludec_tb.v
+src/alu_tb.v
+src/debug_tb.v

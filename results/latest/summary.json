@@ -1,0 +1,57 @@
+[
+  {
+    "name": "alu_all",
+    "asm": "tests/firmware/alu_all.asm",
+    "expect": "tests/firmware/alu_all.expect.json",
+    "log": "results/latest/alu_all.log",
+    "hex": "results/latest/alu_all.hex",
+    "vcd": "results/latest/alu_all.vcd",
+    "returncode": 0,
+    "status": "PASS",
+    "state_line": "x0=00000000 x1=00000005 x2=00000009 x3=0000000e x4=00000004 x5=00000008 x6=00000005 x7=00000001 x8=00000000 x9=00000000 x10=00000000 x11=00000000 mem0=00000000"
+  },
+  {
+    "name": "branch_logic",
+    "asm": "tests/firmware/branch_logic.asm",
+    "expect": "tests/firmware/branch_logic.expect.json",
+    "log": "results/latest/branch_logic.log",
+    "hex": "results/latest/branch_logic.hex",
+    "vcd": "results/latest/branch_logic.vcd",
+    "returncode": 0,
+    "status": "PASS",
+    "state_line": "x0=00000000 x1=00000001 x2=00000001 x3=00000007 x4=00000002 x5=00000007 x6=00000002 x7=00000001 x8=0000000b x9=00000004 x10=00000000 x11=00000000 mem0=00000000"
+  },
+  {
+    "name": "jump_ops",
+    "asm": "tests/firmware/jump_ops.asm",
+    "expect": "tests/firmware/jump_ops.expect.json",
+    "log": "results/latest/jump_ops.log",
+    "hex": "results/latest/jump_ops.hex",
+    "vcd": "results/latest/jump_ops.vcd",
+    "returncode": 0,
+    "status": "PASS",
+    "state_line": "x0=00000000 x1=00000004 x2=00000007 x3=00000014 x4=00000009 x5=00000008 x6=00000018 x7=00000000 x8=00000000 x9=00000000 x10=00000000 x11=00000000 mem0=00000000"
+  },
+  {
+    "name": "memory_hazard",
+    "asm": "tests/firmware/memory_hazard.asm",
+    "expect": "tests/firmware/memory_hazard.expect.json",
+    "log": "results/latest/memory_hazard.log",
+    "hex": "results/latest/memory_hazard.hex",
+    "vcd": "results/latest/memory_hazard.vcd",
+    "returncode": 0,
+    "status": "PASS",
+    "state_line": "x0=00000000 x1=0000000c x2=00000003 x3=0000000c x4=0000000f x5=0000000f x6=0000000c x7=00000000 x8=00000000 x9=00000000 x10=00000000 x11=00000000 mem0=0000000c"
+  },
+  {
+    "name": "shift_ops",
+    "asm": "tests/firmware/shift_ops.asm",
+    "expect": "tests/firmware/shift_ops.expect.json",
+    "log": "results/latest/shift_ops.log",
+    "hex": "results/latest/shift_ops.hex",
+    "vcd": "results/latest/shift_ops.vcd",
+    "returncode": 0,
+    "status": "PASS",
+    "state_line": "x0=00000000 x1=00000001 x2=00000008 x3=00000001 x4=00000100 x5=00000001 x6=fffffff8 x7=fffffffc x8=00000010 x9=00000004 x10=fffffffe x11=00000000 mem0=00000000"
+  }
+]

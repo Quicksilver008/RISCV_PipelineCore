@@ -1,0 +1,7 @@
+Assembling C:\Users\moham\OneDrive\Desktop\Projects\RISCV_Project\RISCV_PipelineCore\tests\firmware\memory_hazard.asm -> C:\Users\moham\OneDrive\Desktop\Projects\RISCV_Project\RISCV_PipelineCore\src\memfile.hex
+Assembly complete. Generated 8 instructions.
+Compiled expectations from memory_hazard.expect.json
+VCD info: dumpfile dump.vcd opened for output.
+x0=00000000 x1=0000000c x2=00000003 x3=0000000c x4=0000000f x5=0000000f x6=0000000c x7=00000000 x8=00000000 x9=00000000 x10=00000000 x11=00000000 mem0=0000000c
+Firmware test memory_hazard passed.
+C:\Users\moham\OneDrive\Desktop\Projects\RISCV_Project\RISCV_PipelineCore\src\pipeline_tb.v:45: $finish called at 255 (1s)

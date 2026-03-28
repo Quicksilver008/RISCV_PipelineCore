@@ -1,22 +1,73 @@
-module mainDec(op,zero,RegWrite,MemWrite,ResultSrc,ALUSrc,ImmSrc,ALUOp,PCSrc,Branch);
-input [6:0] op;
-input zero;
-output RegWrite,MemWrite,ResultSrc,ALUSrc,PCSrc,Branch;
-output [1:0] ImmSrc,ALUOp;
+`ifndef MAINDEC_V
+`define MAINDEC_V
 
-reg [8:0] control_signals;
+module mainDec(op, RegWrite, MemWrite, ResultSrc, ALUSrc, ImmSrc, ALUOp, Branch, Jump, JumpReg);
 
-assign {RegWrite,ImmSrc,ALUSrc,MemWrite,ResultSrc,Branch,ALUOp}=control_signals; 
+    input [6:0] op;
+    output RegWrite, MemWrite, ALUSrc, Branch, Jump, JumpReg;
+    output [1:0] ResultSrc, ImmSrc, ALUOp;
+    reg RegWrite, MemWrite, ALUSrc, Branch, Jump, JumpReg;
+    reg [1:0] ResultSrc, ImmSrc, ALUOp;
 
-assign PCSrc = zero & Branch;
+    always @(*) begin
+        RegWrite = 1'b0;
+        MemWrite = 1'b0;
+        ResultSrc = 2'b00;
+        ALUSrc = 1'b0;
+        ImmSrc = 2'b00;
+        ALUOp = 2'b00;
+        Branch = 1'b0;
+        Jump = 1'b0;
+        JumpReg = 1'b0;
 
-always @(*) begin
-    casez (op)
-    7'b0000011:control_signals <= 9'b1_00_1_0_1_0_00;
-    7'b0100011:control_signals <= 9'b0_01_1_1_x_0_00;
-    7'b0110011:control_signals <= 9'b1_xx_0_0_0_0_10;
-    7'b1100011:control_signals <= 9'b0_10_0_0_x_1_01;
-    default : control_signals <=9'bxxxxxxxxx;       
-    endcase
-end
+        case (op)
+            7'b0000011: begin
+                RegWrite = 1'b1;
+                ResultSrc = 2'b01;
+                ALUSrc = 1'b1;
+                ImmSrc = 2'b00;
+                ALUOp = 2'b00;
+            end
+            7'b0100011: begin
+                MemWrite = 1'b1;
+                ALUSrc = 1'b1;
+                ImmSrc = 2'b01;
+                ALUOp = 2'b00;
+            end
+            7'b0110011: begin
+                RegWrite = 1'b1;
+                ALUOp = 2'b10;
+            end
+            7'b0010011: begin
+                RegWrite = 1'b1;
+                ALUSrc = 1'b1;
+                ImmSrc = 2'b00;
+                ALUOp = 2'b10;
+            end
+            7'b1100011: begin
+                Branch = 1'b1;
+                ImmSrc = 2'b10;
+                ALUOp = 2'b01;
+            end
+            7'b1101111: begin
+                RegWrite = 1'b1;
+                ResultSrc = 2'b10;
+                ImmSrc = 2'b11;
+                Jump = 1'b1;
+            end
+            7'b1100111: begin
+                RegWrite = 1'b1;
+                ResultSrc = 2'b10;
+                ALUSrc = 1'b1;
+                ImmSrc = 2'b00;
+                Jump = 1'b1;
+                JumpReg = 1'b1;
+            end
+            default: begin
+            end
+        endcase
+    end
+
 endmodule
+
+`endif

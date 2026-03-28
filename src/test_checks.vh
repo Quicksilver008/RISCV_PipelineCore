@@ -1,0 +1,12 @@
+        if (dut.Decode.rf.registers[0] !== 32'h00000000) $fatal(1, "x0 mismatch");
+        if (dut.Decode.rf.registers[1] !== 32'h00000001) $fatal(1, "x1 mismatch");
+        if (dut.Decode.rf.registers[2] !== 32'h00000008) $fatal(1, "x2 mismatch");
+        if (dut.Decode.rf.registers[3] !== 32'h00000001) $fatal(1, "x3 mismatch");
+        if (dut.Decode.rf.registers[4] !== 32'h00000100) $fatal(1, "x4 mismatch");
+        if (dut.Decode.rf.registers[5] !== 32'h00000001) $fatal(1, "x5 mismatch");
+        if (dut.Decode.rf.registers[6] !== 32'hfffffff8) $fatal(1, "x6 mismatch");
+        if (dut.Decode.rf.registers[7] !== 32'hfffffffc) $fatal(1, "x7 mismatch");
+        if (dut.Decode.rf.registers[8] !== 32'h00000010) $fatal(1, "x8 mismatch");
+        if (dut.Decode.rf.registers[9] !== 32'h00000004) $fatal(1, "x9 mismatch");
+        if (dut.Decode.rf.registers[10] !== 32'hfffffffe) $fatal(1, "x10 mismatch");
+        $display("Firmware test shift_ops passed.");

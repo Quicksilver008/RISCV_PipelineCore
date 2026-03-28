@@ -1,0 +1,7 @@
+Assembling C:\Users\moham\OneDrive\Desktop\Projects\RISCV_Project\RISCV_PipelineCore\tests\firmware\jump_ops.asm -> C:\Users\moham\OneDrive\Desktop\Projects\RISCV_Project\RISCV_PipelineCore\src\memfile.hex
+Assembly complete. Generated 9 instructions.
+Compiled expectations from jump_ops.expect.json
+VCD info: dumpfile dump.vcd opened for output.
+x0=00000000 x1=00000004 x2=00000007 x3=00000014 x4=00000009 x5=00000008 x6=00000018 x7=00000000 x8=00000000 x9=00000000 x10=00000000 x11=00000000 mem0=00000000
+Firmware test jump_ops passed.
+C:\Users\moham\OneDrive\Desktop\Projects\RISCV_Project\RISCV_PipelineCore\src\pipeline_tb.v:45: $finish called at 255 (1s)

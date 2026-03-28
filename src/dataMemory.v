@@ -1,23 +1,30 @@
-module Data_Memory(clk,rst,WE,WD,A,RD);
+`ifndef DATA_MEMORY_V
+`define DATA_MEMORY_V
 
-    input clk,rst,WE;
-    input [31:0]A,WD;
-    output [31:0]RD;
+module Data_Memory(clk, rst, WE, WD, A, RD);
 
-    reg [31:0] mem [1023:0];
+    input clk, rst, WE;
+    input [31:0] A, WD;
+    output [31:0] RD;
 
-    always @ (posedge clk)
-    begin
-        if(WE)
-            mem[A] <= WD;
+    reg [31:0] mem [0:1023];
+    integer i;
+    wire [9:0] word_addr;
+
+    assign word_addr = A[11:2];
+
+    always @(posedge clk or negedge rst) begin
+        if (!rst) begin
+            for (i = 0; i < 1024; i = i + 1) begin
+                mem[i] <= 32'h00000000;
+            end
+        end else if (WE) begin
+            mem[word_addr] <= WD;
+        end
     end
 
-    assign RD = (~rst) ? 32'd0 : mem[A];
-
-    initial begin
-       mem[0] = 32'h00000002;
-        //mem[40] = 32'h00000002;
-    end
-
+    assign RD = rst ? mem[word_addr] : 32'h00000000;
 
 endmodule
+
+`endif
